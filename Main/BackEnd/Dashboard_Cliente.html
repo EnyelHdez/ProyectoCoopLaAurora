@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solicitud de empleo — [Nombre]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="/Main/FrontEnd/Dashboard_Cliente.css">
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Panel lateral -->
+  <aside class="intro">
+    <div class="intro__content">
+      <p class="intro__eyebrow">Talento humano</p>
+      <h1 class="intro__title">Solicitud de<br>empleo</h1>
+      <p class="intro__company">Cooperativa La Aurora</p>
+      <p class="intro__text">
+        Completa este formulario para postularte a una vacante con nosotros.
+        Necesitamos tus datos personales, tu experiencia y tu currículum
+        para poder evaluar tu candidatura y, si avanzas, iniciar tu proceso
+        de ingreso.
+      </p>
+
+      <ol class="intro__steps">
+        <li>Datos personales</li>
+        <li>Perfil profesional</li>
+        <li>Educación</li>
+        <li>Experiencia laboral</li>
+        <li>Documentos</li>
+        <li>Referencias</li>
+        <li>Autorización y envío</li>
+      </ol>
+
+      <div class="intro__footer">
+        <p>¿Dudas sobre tu postulación?</p>
+        <p><a href="mailto:reclutamiento@empresa.com">reclutamiento@empresa.com</a></p>
+        <p>+1 (809) 000-0000</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Formulario -->
+  <main class="form-wrap">
+    <form class="form" action="#" method="POST" enctype="multipart/form-data">
+
+      <!-- 1. Datos personales -->
+      <fieldset class="step">
+        <legend class="step__legend">Datos personales</legend>
+
+        <div class="field">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Como aparece en tu cédula" autocomplete="name" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="nacimiento" name="nacimiento" max="2026-09-11" autocomplete="bday" required>
+          </div>
+          <div class="field">
+            <label for="cedula">Cédula / documento de identidad</label>
+            <input type="text" id="cedula" name="cedula" placeholder="000-0000000-0" autocomplete="off" required>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="(000) 000-0000" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Calle, número, sector" autocomplete="street-address" required>
+          </div>
+          <div class="field">
+            <label for="ciudad">Ciudad / provincia</label>
+            <input type="text" id="ciudad" name="ciudad" autocomplete="address-level2" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- 2. Perfil profesional -->
+      <fieldset class="step">
+        <legend class="step__legend">Perfil profesional</legend>
+
+        <div class="field">
+          <label for="puesto">Puesto al que aplicas</label>
+          <input type="text" id="puesto" name="puesto" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="experiencia_anos">Años de experiencia</label>
+            <select id="experiencia_anos" name="experiencia_anos" required>
+              <option value="">Selecciona una opción</option>
+              <option value="0-1">Menos de 1 año</option>
+              <option value="1-3">1 a 3 años</option>
+              <option value="3-5">3 a 5 años</option>
+              <option value="5+">Más de 5 años</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="disponibilidad">Disponibilidad para iniciar</label>
+            <input type="date" id="disponibilidad" name="disponibilidad" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="pretension">Pretensión salarial mensual</label>
+          <input type="text" id="pretension" name="pretension" placeholder="Ej. RD$ 30,000" required>
+        </div>
+      </fieldset>
+
+      <!-- 3. Educación -->
+      <fieldset class="step">
+        <legend class="step__legend">Educación</legend>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="nivel_educativo">Nivel educativo alcanzado</label>
+            <select id="nivel_educativo" name="nivel_educativo" required>
+              <option value="">Selecciona una opción</option>
+              <option value="secundaria">Secundaria</option>
+              <option value="tecnico">Técnico</option>
+              <option value="universitario">Universitario</option>
+              <option value="postgrado">Postgrado</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="titulo">Título obtenido</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Ej. Lic. en Contabilidad" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="institucion">Institución educativa</label>
+          <input type="text" id="institucion" name="institucion" required>
+        </div>
+      </fieldset>
+
+      <!-- 4. Experiencia laboral -->
+      <fieldset class="step">
+        <legend class="step__legend">Experiencia laboral</legend>
+        <p class="step__hint">Cuéntanos sobre tu empleo más reciente. Podrás ampliar el detalle en la entrevista.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="empresa_anterior">Empresa</label>
+            <input type="text" id="empresa_anterior" name="empresa_anterior">
+          </div>
+          <div class="field">
+            <label for="puesto_anterior">Puesto ocupado</label>
+            <input type="text" id="puesto_anterior" name="puesto_anterior">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="periodo">Periodo laborado</label>
+            <input type="text" id="periodo" name="periodo" placeholder="Ej. Ene 2022 – Mar 2024">
+          </div>
+          <div class="field">
+            <label for="motivo_salida">Motivo de salida</label>
+            <input type="text" id="motivo_salida" name="motivo_salida">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- 5. Documentos -->
+      <fieldset class="step">
+        <legend class="step__legend">Documentos</legend>
+
+        <div class="field">
+          <label for="cv">Currículum (PDF)</label>
+          <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="foto">Foto tipo carnet</label>
+            <input type="file" id="foto" name="foto" accept="image/*">
+          </div>
+          <div class="field">
+            <label for="cedula_scan">Copia de cédula</label>
+            <input type="file" id="cedula_scan" name="cedula_scan" accept=".pdf,image/*">
+          </div>
+        </div>
+      </fieldset>
+
+     
+
+      <!-- 7. Autorización -->
+      <fieldset class="step step--last">
+        <legend class="step__legend">Autorización y envío</legend>
+
+        <label class="checkbox">
+          <input type="checkbox" name="autoriza_datos" required>
+          <span>Autorizo el uso de mis datos personales para fines de reclutamiento y, en caso de ser contratado/a, para mi proceso de ingreso como empleado/a.</span>
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" name="declara_veracidad" required>
+          <span>Declaro que la información suministrada en este formulario es verídica.</span>
+        </label>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="firma">Nombre como firma</label>
+            <input type="text" id="firma" name="firma" placeholder="Escribe tu nombre completo" required>
+          </div>
+          <div class="field">
+            <label for="fecha_firma">Fecha</label>
+            <input type="date" id="fecha_firma" name="fecha_firma" required>
+          </div>
+        </div>
+
+        <button type="submit" class="submit">Enviar solicitud</button>
+      </fieldset>
+
+    </form>
+  </main>
+
+</div>
+
+</body>
+</html>
