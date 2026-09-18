@@ -1,0 +1,21 @@
+{
+  "name": "proyectocoop",
+  "version": "1.0.0",
+  "description": "En este repositorio se almacenara el proyecto de la cooperativa la aurora",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnyelHdez/ProyectoCoopLaAurora.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/EnyelHdez/ProyectoCoopLaAurora/issues"
+  },
+  "homepage": "https://github.com/EnyelHdez/ProyectoCoopLaAurora#readme"
+}
