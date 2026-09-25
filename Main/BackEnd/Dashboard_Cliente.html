@@ -7,7 +7,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="/Main/FrontEnd/Dashboard_Cliente.css">
+<link rel="stylesheet" href="/Main/FrontEnd/Dashboard_Cliente.css">
+<link rel="stylesheet" href="/Main/FrontEnd/enhancements.css">
+<script src="/Main/FuncionesJS/script.js"></script>
+<script src="/Main/FuncionesJS/enhancements.js" defer></script>
 </head>
 <body>
 
@@ -32,7 +35,6 @@
         <li>Educación</li>
         <li>Experiencia laboral</li>
         <li>Documentos</li>
-        <li>Referencias</li>
         <li>Autorización y envío</li>
       </ol>
 
@@ -64,14 +66,14 @@
           </div>
           <div class="field">
             <label for="cedula">Cédula / documento de identidad</label>
-            <input type="text" id="cedula" name="cedula" placeholder="000-0000000-0" autocomplete="off" required>
+            <input type="text" id="cedula" name="cedula" placeholder="000-0000000-0" maxlength="13" required>
           </div>
         </div>
 
         <div class="field-row">
           <div class="field">
             <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="(000) 000-0000" autocomplete="tel" required>
+            <input type="tel" id="telefono" name="telefono" placeholder="(000) 000-0000" maxlength="14" required>
           </div>
           <div class="field">
             <label for="correo">Correo electrónico</label>
@@ -199,9 +201,7 @@
         </div>
       </fieldset>
 
-     
-
-      <!-- 7. Autorización -->
+      <!-- 6. Autorización -->
       <fieldset class="step step--last">
         <legend class="step__legend">Autorización y envío</legend>
 

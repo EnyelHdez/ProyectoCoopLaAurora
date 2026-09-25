@@ -1,0 +1,237 @@
+/* Calendario personalizado para los campos de fecha.
+   Archivo aparte: no modifica ni depende de cambios en Dashboard_Cliente.css,
+   solo reutiliza las variables de color (--accent, --ink, --line, etc.)
+   que ya están definidas ahí en :root. */
+
+.dp {
+  position: relative;
+}
+
+/* El input de texto que muestra la fecha ya hereda el estilo de
+   input[type="text"] de tu hoja de estilos. Solo le damos espacio para el
+   ícono y el cursor de "click". */
+.dp-display {
+  width: 100%;
+  padding-right: 42px;
+  cursor: pointer;
+  background: var(--white);
+}
+
+.dp-display::placeholder {
+  color: #9AA6A0;
+}
+
+.dp-icon {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.dp-icon:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.dp:focus-within .dp-display {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* --- Ventana del calendario --- */
+.dp-popup {
+  display: none;
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 300px;
+  max-width: calc(100vw - 32px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(22, 65, 48, 0.18);
+  padding: 16px;
+}
+
+.dp-popup.is-open {
+  display: block;
+}
+
+.dp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.dp-selects {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  justify-content: center;
+}
+
+.dp-select {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 6px 6px;
+  cursor: pointer;
+}
+
+.dp-select-month {
+  flex: 1.4;
+  min-width: 0;
+}
+
+.dp-select-year {
+  flex: 1;
+  min-width: 0;
+}
+
+.dp-nav {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.dp-nav:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.dp-daylabels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+}
+
+.dp-daylabels span {
+  text-align: center;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding: 4px 0;
+}
+
+.dp-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.dp-day {
+  aspect-ratio: 1 / 1;
+  border: none;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.dp-day:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.dp-day--empty {
+  cursor: default;
+  pointer-events: none;
+}
+
+.dp-day--disabled {
+  color: #C9D1CB;
+  cursor: not-allowed;
+}
+
+.dp-day--today {
+  box-shadow: inset 0 0 0 1.5px var(--gold);
+  font-weight: 600;
+}
+
+.dp-day--selected {
+  background: var(--accent) !important;
+  color: var(--white) !important;
+  font-weight: 600;
+}
+
+.dp-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.dp-today-btn,
+.dp-clear-btn {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.dp-today-btn {
+  color: var(--accent);
+}
+
+.dp-today-btn:hover {
+  text-decoration: underline;
+}
+
+.dp-clear-btn {
+  color: var(--ink-soft);
+}
+
+.dp-clear-btn:hover {
+  color: #C0392B;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .dp-popup {
+    width: 280px;
+    padding: 12px;
+  }
+
+  .dp-select {
+    font-size: 12px;
+    padding: 5px 4px;
+  }
+}
